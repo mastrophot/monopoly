@@ -39,9 +39,88 @@
 
     <!-- Ігрове поле -->
     <div id="gameScreen" class="screen" style="display: none;">
-        <div id="gameBoard"></div>
-        <div id="playerInfo"></div>
-        <div id="controls"></div>
+        <div class="game-container">
+            <div id="gameBoard">
+                <!-- Нижній ряд (0-10) -->
+                <div class="row bottom">
+                    <div class="cell corner" data-position="20">Безкоштовна парковка</div>
+                    <div class="cell property" data-position="21">Вул. 1</div>
+                    <div class="cell chance" data-position="22">Шанс</div>
+                    <div class="cell property" data-position="23">Вул. 2</div>
+                    <div class="cell property" data-position="24">Вул. 3</div>
+                    <div class="cell railroad" data-position="25">Вокзал</div>
+                    <div class="cell property" data-position="26">Вул. 4</div>
+                    <div class="cell property" data-position="27">Вул. 5</div>
+                    <div class="cell utility" data-position="28">Водоканал</div>
+                    <div class="cell property" data-position="29">Вул. 6</div>
+                    <div class="cell corner" data-position="30">Поліція</div>
+                </div>
+                
+                <!-- Лівий ряд (11-19) -->
+                <div class="row left">
+                    <div class="cell property" data-position="19">Вул. 19</div>
+                    <div class="cell property" data-position="18">Вул. 18</div>
+                    <div class="cell chest" data-position="17">Скарбниця</div>
+                    <div class="cell property" data-position="16">Вул. 17</div>
+                    <div class="cell railroad" data-position="15">Вокзал</div>
+                    <div class="cell property" data-position="14">Вул. 16</div>
+                    <div class="cell property" data-position="13">Вул. 15</div>
+                    <div class="cell chance" data-position="12">Шанс</div>
+                    <div class="cell property" data-position="11">Вул. 14</div>
+                </div>
+                
+                <!-- Верхній ряд (31-39) -->
+                <div class="row top">
+                    <div class="cell property" data-position="31">Вул. 7</div>
+                    <div class="cell property" data-position="32">Вул. 8</div>
+                    <div class="cell chest" data-position="33">Скарбниця</div>
+                    <div class="cell property" data-position="34">Вул. 9</div>
+                    <div class="cell railroad" data-position="35">Вокзал</div>
+                    <div class="cell chance" data-position="36">Шанс</div>
+                    <div class="cell property" data-position="37">Вул. 10</div>
+                    <div class="cell tax" data-position="38">Податок</div>
+                    <div class="cell property" data-position="39">Вул. 11</div>
+                </div>
+                
+                <!-- Правий ряд (1-9) -->
+                <div class="row right">
+                    <div class="cell property" data-position="1">Вул. 13</div>
+                    <div class="cell tax" data-position="2">Податок</div>
+                    <div class="cell property" data-position="3">Вул. 12</div>
+                    <div class="cell chest" data-position="4">Скарбниця</div>
+                    <div class="cell railroad" data-position="5">Вокзал</div>
+                    <div class="cell property" data-position="6">Вул. 11</div>
+                    <div class="cell chance" data-position="7">Шанс</div>
+                    <div class="cell property" data-position="8">Вул. 10</div>
+                    <div class="cell property" data-position="9">Вул. 9</div>
+                </div>
+                
+                <!-- Кутові клітинки -->
+                <div class="cell corner start" data-position="0">Старт</div>
+                <div class="cell corner jail" data-position="10">В'язниця</div>
+            </div>
+            
+            <div id="playerInfo" class="player-info">
+                <div class="current-player">
+                    <h3>Ваш хід:</h3>
+                    <div id="currentPlayerName"></div>
+                </div>
+                <div class="dice-container">
+                    <div id="dice1" class="dice">1</div>
+                    <div id="dice2" class="dice">1</div>
+                    <button id="rollDice">Кинути кубики</button>
+                </div>
+                <div class="player-stats">
+                    <h3>Гравці:</h3>
+                    <div id="playersStats"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="controls" class="controls">
+            <button id="buyProperty" style="display: none;">Купити</button>
+            <button id="endTurn" style="display: none;">Завершити хід</button>
+        </div>
     </div>
 </body>
 </html>

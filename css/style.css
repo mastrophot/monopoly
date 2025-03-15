@@ -21,6 +21,7 @@ body {
     text-align: center;
 }
 
+/* Стартовий екран */
 h1 {
     color: #2c3e50;
     margin-bottom: 2rem;
@@ -66,11 +67,185 @@ button:hover {
     text-align: left;
 }
 
+/* Ігрове поле */
+#gameScreen {
+    padding: 1rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.game-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 #gameBoard {
     width: 800px;
     height: 800px;
     background-color: #fff;
-    margin: 0 auto;
     position: relative;
     border: 2px solid #2c3e50;
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+}
+
+.row {
+    display: flex;
+    position: absolute;
+}
+
+.row.bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: calc(100% / 11);
+}
+
+.row.top {
+    top: 0;
+    left: calc(100% / 11);
+    right: calc(100% / 11);
+    height: calc(100% / 11);
+}
+
+.row.left {
+    left: 0;
+    top: calc(100% / 11);
+    bottom: calc(100% / 11);
+    width: calc(100% / 11);
+    flex-direction: column;
+}
+
+.row.right {
+    right: 0;
+    top: calc(100% / 11);
+    bottom: calc(100% / 11);
+    width: calc(100% / 11);
+    flex-direction: column;
+}
+
+.cell {
+    border: 1px solid #2c3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    font-size: 0.8rem;
+    background-color: #fff;
+    position: relative;
+}
+
+.row.bottom .cell,
+.row.top .cell {
+    width: calc(100% / 11);
+    height: 100%;
+}
+
+.row.left .cell,
+.row.right .cell {
+    width: 100%;
+    height: calc(100% / 9);
+}
+
+.cell.corner {
+    width: calc(100% / 11);
+    height: calc(100% / 11);
+    position: absolute;
+}
+
+.cell.start {
+    left: 0;
+    bottom: 0;
+    background-color: #2ecc71;
+}
+
+.cell.jail {
+    right: 0;
+    bottom: 0;
+    background-color: #e74c3c;
+}
+
+.cell.parking {
+    left: 0;
+    top: 0;
+    background-color: #f1c40f;
+}
+
+.cell.police {
+    right: 0;
+    top: 0;
+    background-color: #3498db;
+}
+
+.cell.property {
+    background-color: #ecf0f1;
+}
+
+.cell.railroad {
+    background-color: #95a5a6;
+}
+
+.cell.chance {
+    background-color: #e67e22;
+}
+
+.cell.chest {
+    background-color: #9b59b6;
+}
+
+.cell.tax {
+    background-color: #e74c3c;
+}
+
+.cell.utility {
+    background-color: #1abc9c;
+}
+
+/* Інформація про гравців */
+.player-info {
+    width: 300px;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.dice-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.dice {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border: 2px solid #2c3e50;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.controls {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.player-stats {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+#playersStats {
+    margin-top: 0.5rem;
 }
