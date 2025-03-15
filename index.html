@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Монополія</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    
+    <!-- Game Scripts -->
+    <script src="js/firebase-config.js" defer></script>
+    <script src="js/game.js" defer></script>
+</head>
+<body>
+    <!-- Стартовий екран -->
+    <div id="startScreen" class="screen">
+        <h1>Монополія</h1>
+        <div class="game-setup">
+            <input type="text" id="playerName" placeholder="Ваше ім'я" maxlength="20">
+            <div class="room-options">
+                <button id="createGame">Створити гру</button>
+                <button id="joinGame">Приєднатися до гри</button>
+            </div>
+            <input type="text" id="gameCode" placeholder="Код гри" style="display: none;">
+        </div>
+    </div>
+
+    <!-- Екран очікування -->
+    <div id="waitingScreen" class="screen" style="display: none;">
+        <h2>Очікування гравців</h2>
+        <p>Код гри: <span id="gameCodeDisplay"></span></p>
+        <div id="playersList"></div>
+        <button id="startGame" style="display: none;">Почати гру</button>
+    </div>
+
+    <!-- Ігрове поле -->
+    <div id="gameScreen" class="screen" style="display: none;">
+        <div id="gameBoard"></div>
+        <div id="playerInfo"></div>
+        <div id="controls"></div>
+    </div>
+</body>
+</html>
